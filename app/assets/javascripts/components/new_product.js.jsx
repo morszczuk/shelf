@@ -10,7 +10,7 @@ var NewProduct = React.createClass({
   },
 
   _addProduct: function(e) {
-    s
+
   },
 
   render: function() {
