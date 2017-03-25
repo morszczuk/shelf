@@ -23,7 +23,7 @@ var NewProduct = React.createClass({
         <div>Cardinality: {this.props.cardinality}</div>
         <div>Unit: {this.props.unit}</div>
         <div>Due Date: {this.props.dueDate}</div>
-        <button onClick=#{}}>Send</button>
+        <button>Send</button>
       </div>
     );
   }
