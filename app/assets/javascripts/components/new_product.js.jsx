@@ -67,28 +67,43 @@ var NewProduct = React.createClass({
     const isClosed = this.state.isClosed;
     return (
       <div className="row">
-        <div className="col-md-6 col-md-offset-3 borderrr">
       {isClosed ? (
-        <button className="btn btn-success" onClick={this._changeClosingState}>Open form </button>
+        <div className="col-md-6 col-md-offset-3 text-center">
+          <button className="btn btn-circle btn-xl" onClick={this._changeClosingState}><i className="glyphicon glyphicon-plus" /> </button>
+        </div>
       ) : (
+          <div className="col-md-6 col-md-offset-3 main-color-border text-center">
           <form onSubmit={this._addProduct}>
             <div className="form-group">
-              <label for="nameInput">Name</label>
               <input  type="text"
                       class="form-control"
                       id="nameInput"
                       value={this.props.name}
                       onChange={this._onFieldChange}
-                      placeholder="Name"/>
+                      className="main-color-border bottom-border black-color font-bold h1-font-size expanded"
+                      placeholder="nazwa produktu"/>
             </div>
-            <div className="form-group">
-              <label for="companyInput">Company</label>
-              <input type="text" class="form-control" id="companyInput" value={this.props.company} onChange={this._onFieldChange} placeholder="Company"/>
+            <div className="row">
+              <div className="col-md-6">
+                <input  type="text"
+                        class="form-control"
+                        id="categoryInput"
+                        value={this.props.category}
+                        onChange={this._onFieldChange}
+                        className="main-color-border bottom-border black-color font-normal paragraph-font-size"
+                        placeholder="kategoria"/>
+              </div>
+              <div className="col-md-6">
+                <input  type="text"
+                        class="form-control"
+                        id="companyInput"
+                        value={this.props.company}
+                        onChange={this._onFieldChange}
+                        className="main-color-border bottom-border black-color font-normal paragraph-font-size"
+                        placeholder="firma"/>
+              </div>
             </div>
-            <div className="form-group">
-              <label for="categoryInput">Category</label>
-              <input type="text" class="form-control" id="categoryInput" value={this.props.category} onChange={this._onFieldChange} placeholder="Category"/>
-            </div>
+
             <div className="form-group">
               <label for="amountInput">Amount</label>
               <input type="number" class="form-control" id="amountInput" value={this.props.amount} onChange={this._onFieldChange} placeholder="Amount"/>
@@ -108,8 +123,8 @@ var NewProduct = React.createClass({
             <button type="submit" className="btn btn-success">Send</button>
             <button type="button" className="btn btn-default" onClick={this._changeClosingState}>Close</button>
           </form>
+          </div>
         )}
-        </div>
       </div>
     );
   }
